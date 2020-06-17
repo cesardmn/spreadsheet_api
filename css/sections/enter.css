@@ -1,0 +1,73 @@
+.enter-section {
+  background-color: var(--c1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.enter-container {
+  display: block;
+  background-color: var(--c6);
+  padding: 2rem;
+  border-radius: .5rem;
+  text-align: center;
+}
+
+.enter-title {
+  color: var(--c1);
+  margin-bottom: 1.5rem;
+}
+
+.enter-form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enter-form input {
+  padding: 1rem;
+  border-radius: .5rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  color: var(--c5);
+}
+
+.enter-form::placeholder {
+  font-size: x-small;
+}
+
+.enter-form button {
+  background-color: var(--c1);
+  border: 0 solid transparent;
+  outline-color: none;
+  color: var(--c5);
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 2rem;
+  width: 7rem;
+  margin-bottom: 1.5rem;
+  transition: .2s;
+}
+
+.enter-form button:hover {
+  cursor: pointer;
+  background-color: var(--c3);
+  color: var(--c1);
+}
+
+.enter-section a {
+  font-size: small;
+}
+
+.enter-error {
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 0 solid transparent;
+  border-radius: .5rem;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
