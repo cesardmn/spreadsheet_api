@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --c1: #fff;
+  --c2: #f1f3f4;
+  --c3: #cecece;
+  --c4: #7e8182;
+  --c5: #5f6368;
+  --c6: #42ae61;
+  --c7: #000000;
+  --c8: #000000cc;
+  --c9: #4e8df5;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.hide {
+  display: none!important;
+}
