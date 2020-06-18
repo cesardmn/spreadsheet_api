@@ -27,6 +27,6 @@ section {
   min-width: 100vw;
 }
 
-.hide {
+[hidden] {
   display: none!important;
 }
