@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+input, button {
+  border: 0;
+  outline: 0;
+}
+
+section {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+[hidden] {
+  display: none!important;
+}
