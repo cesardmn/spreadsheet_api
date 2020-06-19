@@ -1,0 +1,29 @@
+.spreadsheet-title {
+  background-color: var(--m3);
+  color: var(--p1);
+  text-align: center;
+  padding: 1rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--p2);
+  color: var(--s1);
+  padding-left: .5rem;
+  min-height: 4rem;
+  transition: .2s;
+  list-style: none;
+}
+
+.menu-tiem-active, 
+.menu-item:hover {
+  background-color: var(--p3);
+  color: var(--s2);
+  font-weight: bold;
+}
+
+.menu-item-link {
+  text-decoration: none;
+}
+

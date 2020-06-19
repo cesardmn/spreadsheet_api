@@ -1,0 +1,19 @@
+.spreadsheet-section {
+  background-color: var(--p1);
+  display: grid;
+  grid-template-areas:
+    "left-bar",
+    "right-content";
+  grid-template-columns: 15vw auto;  
+}
+
+.left-bar {
+  grid-area: "left-bar";
+  background-color: var(--p2);
+}
+
+.right-content {
+  grid-area: "right-content";
+  padding: 1rem;
+}
+
