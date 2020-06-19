@@ -30,7 +30,7 @@
   width: 33%;
   height: 33%;
   background-color: var(--m3);
-  float: left;
+  float: right;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
   animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
 }
