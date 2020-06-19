@@ -25,4 +25,10 @@ class Enter {
     return this._modal
   }
 
+  async loadSpreadsheet(event) {
+    event.preventDefault()
+    this.button.setAttribute('disabled', true)
+    let ssid = this.input.value
+    console.log(ssid)
+  }
 }

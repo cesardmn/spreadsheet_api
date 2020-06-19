@@ -26,7 +26,11 @@
 
       <h3 class="enter-title">Spreadsheet ID</h3>
 
-      <form class="enter-form" onsubmit="app.enterSubmit(event)">
+      <form 
+        class="enter-form" 
+        onsubmit="enter.loadSpreadsheet(event)"
+        >
+
         <div class="enter-form-group">
           <input type="text" placeholder="18XNm8o1iymirnTvDSk5Nh6TnYB-_eJZ7e41pmsl6A8k" required>
           <button type="submit">Enter</button>
@@ -42,6 +46,9 @@
   <!-- Models -->
   <script src="./js/models/Enter.js"></script>
 
+  <script>
+    const enter = new Enter()
+  </script>
 </body>
 
 </html>
