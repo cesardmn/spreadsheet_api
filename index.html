@@ -28,7 +28,7 @@
 
       <form 
         class="enter-form" 
-        onsubmit="enter.loadSpreadsheet(event)"
+        onsubmit="enter.submit(event)"
         >
 
         <div class="enter-form-group">
@@ -46,6 +46,9 @@
   <!-- Models -->
   <script src="./js/models/Enter.js"></script>
   <script src="./js/models/Service.js"></script>
+
+  <!-- Controller -->
+  <script src="./js/controllers/EnterController.js"></script>
 
   <script>
     const enter = new Enter()

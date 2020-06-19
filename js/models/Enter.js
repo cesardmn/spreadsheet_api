@@ -5,7 +5,6 @@ class Enter {
     this._input = this._section.querySelector('input')
     this._button = this._section.querySelector('button')
     this._modal = this._section.querySelector('a')
-
     Object.freeze(this)
   }
 
@@ -25,10 +24,9 @@ class Enter {
     return this._modal
   }
 
-  async loadSpreadsheet(event) {
+  submit(event) {
     event.preventDefault()
-    this.button.setAttribute('disabled', true)
-    let ssid = this.input.value
-    console.log(ssid)
+    let controller = new EnterController(this)
+    controller.loadSpreadsheet()
   }
 }
