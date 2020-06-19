@@ -51,11 +51,12 @@
   transition: .2s;
 }
 
-.enter-form button:hover {
+.enter-form button:hover,
+.enter-form button[disabled] {
   cursor: pointer;
   background-color: var(--m1);
   color: var(--p2);
-}
+} 
 
 .enter-section a {
   font-size: small;
