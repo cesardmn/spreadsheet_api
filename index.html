@@ -17,13 +17,14 @@
   <link rel="stylesheet" href="./css/sections/spreadsheet/global.css">
   <link rel="stylesheet" href="./css/sections/spreadsheet/left-bar.css">
   <link rel="stylesheet" href="./css/sections/spreadsheet/right-content.css">
+  <link rel="stylesheet" href="./css/sections/spinner.css">
 
 </head>
 
 <body>
 
   <!-- Enter -->
-  <section class="enter-section" hidden >
+  <section class="enter-section">
 
     <div class="enter-container">
 
@@ -47,7 +48,7 @@
   </section>
 
   <!-- Spreadsheet -->
-  <section class="spreadsheet-section">
+  <section class="spreadsheet-section" hidden>
     <header class="left-bar">
       <h3 class="spreadsheet-title">Spreadsheet Title</h3>
       <nav class="nav-menu">
@@ -110,12 +111,34 @@
     </main>
   </section>
 
+  <!-- Spinner -->
+  <section class="spinner-section" hidden>
+    <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
+    <h4>Loading Spreadsheet ...</h4>
+    <a href="https://tobiasahlin.com/spinkit/" target="blank">
+      <h6>base css spinner by @tobiasahlin </h6>
+    </a>
+  </section>
+
   <!-- Models -->
   <script src="./js/models/Enter.js"></script>
   <script src="./js/models/Service.js"></script>
 
   <!-- Controller -->
   <script src="./js/controllers/EnterController.js"></script>
+
+  <!-- Views -->
+  <script src="./js/views/EnterView.js" defer></script>
 
   <script>
     const enter = new Enter()

@@ -9,7 +9,8 @@ class EnterController {
     this._enter.button.setAttribute('disabled', true)
     this._enter.section.setAttribute('hidden', true)
 
-    // show spinner section
+    this._enter.spinner.removeAttribute('hidden')
+    console.log(enter.spinner)
 
     this._doPost(this._enter.input.value)
 
@@ -17,15 +18,20 @@ class EnterController {
     this._enter.button.removeAttribute('disabled')
     this._enter.input.value = ''
 
-    // hidden spinner
-    // show Spreadsheet
   }
 
   async _doPost(ssid) {
-    let spreadsheet = await Service.read(ssid)
-    let response = await spreadsheet.json()
-    console.log(response);
+    let enterView = new EnterView()
 
-    // render response
+    try {
+      let response = await Service.read(ssid)
+      let spreadsheet = await response.json()
+      enterView.setSpreadsheet(spreadsheet)
+      this._enter.spreadsheet.removeAttribute('hidden')
+    } catch (error) {
+      enterView.setError(error)
+    } finally {
+      this._enter.spinner.setAttribute('hidden', true)
+    }
   }
 }
