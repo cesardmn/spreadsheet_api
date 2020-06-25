@@ -30,10 +30,7 @@
 
       <h3 class="enter-title">Spreadsheet ID</h3>
 
-      <form 
-        class="enter-form" 
-        onsubmit="enter.submit(event)"
-        >
+      <form class="enter-form">
 
         <div class="enter-form-group">
           <input type="text" placeholder="18XNm8o1iymirnTvDSk5Nh6TnYB-_eJZ7e41pmsl6A8k" required>
@@ -50,65 +47,14 @@
   <!-- Spreadsheet -->
   <section class="spreadsheet-section" hidden>
     <header class="left-bar">
-      <h3 class="spreadsheet-title">Spreadsheet Title</h3>
+      <h3 class="spreadsheet-title"></h3>
       <nav class="nav-menu">
         <ul class="menu">
-          <a href="#" class="menu-item-link">
-            <li class="menu-item menu-tiem-active">Sheet 1</li>
-          </a>
-          <a href="#" class="menu-item-link">
-            <li class="menu-item">Sheet 2</li>
-          </a>
-          <a href="#" class="menu-item-link">
-            <li class="menu-item">Sheet 3</li>
-          </a>
-          <a href="#" class="menu-item-link">
-            <li class="menu-item">Sheet 4</li>
-          </a>
         </ul>
       </nav>
     </header>
 
-    <main class="right-content">
-      <table>
-        
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>TYPE</th>
-            <th>DESCRIPTION</th>
-            <th>VALUE</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>1234556</td>
-            <td>input</td>
-            <td>sale</td>
-            <td>$ 1,245.00</td>
-          </tr>
-          <tr>
-            <td>1234556</td>
-            <td>input</td>
-            <td>sale</td>
-            <td>$ 1,245.00</td>
-          </tr>
-          <tr>
-            <td>1234556</td>
-            <td>input</td>
-            <td>sale</td>
-            <td>$ 1,245.00</td>
-          </tr>
-          <tr>
-            <td>1234556</td>
-            <td>input</td>
-            <td>sale</td>
-            <td>$ 1,245.00</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
+    <main class="right-content"></main>
   </section>
 
   <!-- Spinner -->
@@ -132,17 +78,19 @@
 
   <!-- Models -->
   <script src="./js/models/Enter.js"></script>
-  <script src="./js/models/Service.js"></script>
+  <script src="./js/models/Spreadsheet.js"></script>
 
-  <!-- Controller -->
-  <script src="./js/controllers/EnterController.js"></script>
+  <!-- Controllers -->
+  <script src="./js/controllers/SpreadsheetController.js"></script>
 
   <!-- Views -->
-  <script src="./js/views/EnterView.js" defer></script>
+  <script src="./js/views/SpreadsheetView.js"></script>
+  
+  <!-- Scripts -->
+  <script src="./js/Service.js"></script>
+  <script src="./js/Helpers.js"></script>
 
-  <script>
-    const enter = new Enter()
-  </script>
+  <script src="./js/models/App.js" dfer></script>
 </body>
 
 </html>

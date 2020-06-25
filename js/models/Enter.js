@@ -5,8 +5,8 @@ class Enter {
     this._input = this._section.querySelector('input')
     this._button = this._section.querySelector('button')
     this._modal = this._section.querySelector('a')
-    this._spinner = document.querySelector('.spinner-section')
-    this._spreadsheet = document.querySelector('.spreadsheet-section')
+    this._error = this._section.querySelector('.enter-error')
+    this._submit = this._listeningSubmit()
     Object.freeze(this)
   }
 
@@ -25,15 +25,24 @@ class Enter {
   get modal() {
     return this._modal
   }
-  get spinner() {
-    return this._spinner
+  get error() {
+    return this._error
   }
-  get spreadsheet() {
-    return this._spreadsheet
+
+  clearForm() {
+    View.enable(this.button)
+    this.input.value = ''
   }
-  submit(event) {
-    event.preventDefault()
-    let controller = new EnterController(this)
-    controller.loadSpreadsheet()
+
+  _listeningSubmit() {
+    this.form.addEventListener(
+      'submit',
+      event => {
+        event.preventDefault()
+        View.hide(this.error)
+        View.disable(this.button)
+        app.spreadsheet.controller.load()
+      }
+    )
   }
 }
