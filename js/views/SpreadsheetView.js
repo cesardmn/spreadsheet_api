@@ -1,7 +1,6 @@
 class SpreadsheetView {
 
   setSpreadsheet(response) {
-    console.log(response);
 
     app.spreadsheet.title.textContent = response.name
 
@@ -11,7 +10,6 @@ class SpreadsheetView {
 
     View.show(app.spreadsheet.section)
   }
-
 
   _setMenu(sheets) {
     let menu = app.spreadsheet.menu
@@ -28,46 +26,40 @@ class SpreadsheetView {
   }
 
   _setSheets(sheets) {
-    let content = app.spreadsheet.content
-    content.innerHTML = ''
+    let tables = app.spreadsheet.content
+    tables.innerHTML = ''
 
     for (let sheet of sheets) {
-      this._setTable(sheet)
-    }
-  }
 
-  _setTable(sheet) {
+      tables.innerHTML += `
+        <h3>${sheet.name}</h3>
 
-    app.spreadsheet.content.innerHTML += `
-      <table id=${Helper.textNormalize(sheet.name)}>
-        
-      <thead>
-          <tr>
-            ${sheet.header.reduce(this._setHeader, '')}
-          </tr>
-        </thead>
-        
-        <tbody>
-            ${this._setBody(sheet.data, sheet.header)}
-        </tbody>
+        <table id=${Helper.textNormalize(sheet.name)}>
+          
+          <thead>
+            <tr>${this._setHeader(sheet.header)}</tr>
+          </thead>
 
-      </table>
-    `
-  }
+          <tbody>${this._setBody(sheet.rows)}</tbody>
 
-  _setHeader(result, item) {
-    return result += `
-      <td>${item}</td>
-    `
-  }
-
-  _setBody(data, header) {
-    
-    for (let row of data){
-
+        </table>
       
-
+      `
     }
   }
 
+  _setHeader(header) {
+    return header.reduce(
+      (header, head) => header += `<th>${head}</th>`,
+      ''
+    )
+  }
+
+  _setBody(rows) {
+    return rows.reduce((tbody, tr) => tbody += `<tr>${this._setRow(tr)}</tr>`, '')
+  }
+
+  _setRow(row) {
+    return row.reduce((tr, td) => tr += `<td>${td}</td>`, '')
+  }
 }
