@@ -39,7 +39,7 @@ class Enter {
       'submit',
       event => {
         event.preventDefault()
-        View.hide(this.error)
+        View.hidden(this.error)
         View.disable(this.button)
         app.spreadsheet.controller.load()
       }

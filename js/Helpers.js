@@ -4,14 +4,14 @@ class Spinner {
     let sections = document.querySelectorAll('section')
 
     for (let section of sections) {
-      View.hide(section)
+      View.hidden(section)
     }
 
     View.show(app.spinner)
   }
 
   static hidden() {
-    View.hide(app.spinner)
+    View.hidden(app.spinner)
   }
 
 }
@@ -21,7 +21,7 @@ class View {
     element.removeAttribute('hidden')
   }
 
-  static hide(element) {
+  static hidden(element) {
     element.setAttribute('hidden', true)
   }
 
