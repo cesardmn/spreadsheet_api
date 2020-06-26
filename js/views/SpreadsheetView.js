@@ -8,6 +8,8 @@ class SpreadsheetView {
 
     this._setSheets(response.sheets)
 
+    this._setLinkMenu()
+
     View.show(app.spreadsheet.section)
   }
 
@@ -17,9 +19,10 @@ class SpreadsheetView {
     menu.innerHTML = ''
 
     for (let sheet of sheets) {
+      let concatName = Helper.textNormalize(sheet.name)
       menu.innerHTML += `
-      <a href="#${Helper.textNormalize(sheet.name)}" class="menu-item-link">
-        <li class="menu-item">${sheet.name}</li>
+      <a href="#${concatName}" class="menu-item-link">
+        <li class="menu-item" id="${concatName}">${sheet.name}</li>
       </a>
       `
     }
@@ -32,17 +35,22 @@ class SpreadsheetView {
     for (let sheet of sheets) {
 
       tables.innerHTML += `
-        <h3>${sheet.name}</h3>
 
-        <table id=${Helper.textNormalize(sheet.name)}>
-          
-          <thead>
-            <tr>${this._setHeader(sheet.header)}</tr>
-          </thead>
+        <div class="table-container" id="${Helper.textNormalize(sheet.name)}" hidden>
+          <table>
+            
+            <caption>
+              <h3>${sheet.name}</h3>
+            </caption>
+            
+            <thead>
+              <tr>${this._setHeader(sheet.header)}</tr>
+            </thead>
 
-          <tbody>${this._setBody(sheet.rows)}</tbody>
+            <tbody>${this._setBody(sheet.rows)}</tbody>
 
-        </table>
+          </table>
+        </div>
       
       `
     }
@@ -61,5 +69,24 @@ class SpreadsheetView {
 
   _setRow(row) {
     return row.reduce((tr, td) => tr += `<td>${td}</td>`, '')
+  }
+
+  _setLinkMenu() {
+    let tables = app.spreadsheet.section.querySelectorAll('.table-container')
+    let menu = app.spreadsheet.menu
+
+    menu.addEventListener(
+      'click', 
+      event => {
+        let tableName = event.target.getAttribute('id')
+        let table = app.spreadsheet.section.querySelector(`.table-container#${tableName}`)
+        this._showTable(tables, table)
+      }
+    )
+  }
+
+  _showTable(tables, table) {
+    tables.forEach(element => View.hidden(element))
+    View.show(table)
   }
 }
